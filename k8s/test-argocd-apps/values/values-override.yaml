@@ -10,7 +10,7 @@ argocd-apps:
     project: default
     source:
       repoURL: https://github.com/giddy87/container-excercises
-      targetRevision: master
+      targetRevision: main
       path: k8s/test-argocd
       helm:
         valueFiles:
@@ -39,7 +39,7 @@ argocd-apps:
     project: default
     source:
       repoURL: https://github.com/giddy87/container-excercises
-      targetRevision: master
+      targetRevision: main
       path: k8s/test-argocd-apps
       helm:
         valueFiles:
@@ -61,7 +61,7 @@ argocd-apps:
     project: default
     source:
       repoURL: https://github.com/giddy87/container-excercises
-      targetRevision: master
+      targetRevision: main
       path: k8s/test-ingress-nginx
       helm:
         valueFiles:
@@ -84,7 +84,7 @@ argocd-apps:
     project: default
     source:
       repoURL: https://github.com/giddy87/container-excercises
-      targetRevision: master
+      targetRevision: main
       path: k8s/ruby-app
       helm:
         valueFiles:
@@ -105,7 +105,7 @@ argocd-apps:
     project: default
     source:
       repoURL: https://github.com/giddy87/container-excercises
-      targetRevision: master
+      targetRevision: main
       path: k8s/test-postgres
       helm:
         valueFiles:
