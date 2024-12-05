@@ -1,0 +1,14 @@
+postgresql:
+  global:
+    postgresql:
+      auth: 
+        postgresPassword: "Test123#"
+        username: "rubyuser"
+        password: "Test123#"
+        database: "rubyappdb"       
+  primary:
+    persistence:
+      enabled: false
+  readReplicas:
+    persistence:
+      enabled: false

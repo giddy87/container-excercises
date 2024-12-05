@@ -1,0 +1,12 @@
+apiVersion: v2
+name: test-argocd
+description: A Custom Helm chart for Argo CD, a declarative, GitOps continuous delivery tool
+  for Kubernetes.
+type: application
+dependencies:
+- name: argo-cd
+  repository: https://argoproj.github.io/argo-helm
+  version: 5.17.1
+icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+version: 0.1.0
+

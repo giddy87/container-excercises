@@ -1,0 +1,10 @@
+apiVersion: v2
+name: test-argocd-apps
+description: A Custome Helm chart for managing additional Argo CD Applications and Projects
+type: application
+icon: https://argo-cd.readthedocs.io/en/stable/assets/logo.png
+dependencies:
+- name: argocd-apps
+  repository: https://argoproj.github.io/argo-helm
+  version: 0.0.6
+version: 0.1.0

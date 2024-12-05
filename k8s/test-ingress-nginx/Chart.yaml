@@ -1,0 +1,11 @@
+apiVersion: v2
+name: test-ingress-nginx
+description: A Custom Helm Chart for Ingress controller for Kubernetes using NGINX as a reverse proxy and
+  load balancer
+type: application
+dependencies:
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx
+  version: 4.4.2
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
+version: 0.1.0

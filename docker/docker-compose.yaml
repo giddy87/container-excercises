@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+#    volumes: 
+#      - db:/var/lib/postgresql/data
+  app:
+    container_name: budget-app
+    build:
+      context: ./Budget-App
+      #target: production
+    #image: quotes-api
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    environment:
+      Budgy_DATABASE_PASSWORD: postgres
+      Budgy_DATABASE: postgres
+      Budgy_DATABASE_USERNAME: postgres
+      Budgy_DATABASE_HOST: docker-postgres-1
+      RAILS_ENV: development
+      SECRET_KEY_BASE: oehjfkjvdfhgjvnmklkfdjhvc
+
