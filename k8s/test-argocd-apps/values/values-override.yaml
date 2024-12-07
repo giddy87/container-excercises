@@ -119,6 +119,24 @@ argocd-apps:
         selfHeal: true
       syncOptions:
       - CreateNamespace=true
+  - name: tekton
+    namespace: argocd
+    additionalLabels: {}
+    additionalAnnotations: {}
+    project: default
+    source:
+      repoURL: https://github.com/giddy87/container-excercises
+      targetRevision: main
+      path: k8s/tekton
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: tekton-pipelines
+    syncPolicy:
+      automated:
+        prune: true
+        selfHeal: true
+      syncOptions:
+      - CreateNamespace=true
   
   
   projects:
