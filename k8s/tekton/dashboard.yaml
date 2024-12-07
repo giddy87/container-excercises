@@ -136,8 +136,6 @@ rules:
       - pods
       - pods/log
       - serviceaccounts
-      #- secrets
-      #- persistentvolumeclaims
     verbs:
       - get
       - list

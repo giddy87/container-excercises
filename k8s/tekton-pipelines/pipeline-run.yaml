@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: clone-build-push-hds
+  name: ruby-build-pushapp
   namespace: tekton-runs
 spec:
   params:
@@ -10,7 +10,7 @@ spec:
   - name: image-reference
     value: giddy87/rubyapp
   - name: image-tag
-    value: 3.0.1
+    value: 3.11
   pipelineRef:
     name: clone-build-push
   podTemplate:
@@ -24,7 +24,7 @@ spec:
         - ReadWriteOnce
         resources:
           requests:
-            storage: 1Gi
+            storage: 20Mi
   - name: docker-credentials
     secret:
       secretName: docker-credential
