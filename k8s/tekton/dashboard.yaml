@@ -137,10 +137,13 @@ rules:
       - pods/log
       - serviceaccounts
       - secrets
+      - persistentvolumeclaims
     verbs:
       - get
       - list
       - watch
+      - create 
+      - update
   - apiGroups:
       - tekton.dev
     resources:
@@ -149,6 +152,9 @@ rules:
       - pipelines
       - pipelineruns
       - runs
+      - stepactions
+      - customruns
+      - customtasks
     verbs:
       - get
       - list
@@ -306,7 +312,7 @@ spec:
               path: /readiness
               port: 9097
           securityContext:
-            allowPrivilegeEscalation: false
+            allowPrivilegeEscalation: true
             capabilities:
               drop:
                 - ALL
