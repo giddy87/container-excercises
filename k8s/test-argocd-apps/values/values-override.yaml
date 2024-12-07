@@ -146,6 +146,8 @@ argocd-apps:
       repoURL: https://github.com/giddy87/container-excercises
       targetRevision: main
       path: k8s/tekton-pipelines
+      directory:
+        exclude: 'pipeline-run.yaml'
     destination:
       server: https://kubernetes.default.svc
       namespace: tekton-pipelines
