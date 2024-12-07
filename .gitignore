@@ -1,0 +1,4 @@
+k8secret/*
+docker-secret.yaml
+git-secrets.yaml
+
