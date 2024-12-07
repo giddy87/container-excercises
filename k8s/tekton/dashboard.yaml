@@ -27,7 +27,7 @@ spec:
         - jsonPath: .spec.name
           name: Kind
           type: string
-        - jsonPath: .spec.displayName
+        - jsonPath: .spec.displayname
           name: Display name
           type: string
         - jsonPath: .metadata.creationTimestamp
@@ -142,19 +142,18 @@ rules:
   - apiGroups:
       - tekton.dev
     resources:
-      - stepactions
       - tasks
       - taskruns
       - pipelines
       - pipelineruns
-      - customruns
+      - runs
     verbs:
-      - create
-      - update
-      - patch
       - get
       - list
       - watch
+      - create
+      - patch 
+      - update 
   - apiGroups:
       - triggers.tekton.dev
     resources:
@@ -205,7 +204,7 @@ subjects:
 ---
 apiVersion: v1
 data:
-  version: v0.53.0
+  version: v0.32.0
 kind: ConfigMap
 metadata:
   labels:
@@ -223,9 +222,9 @@ metadata:
     app.kubernetes.io/instance: default
     app.kubernetes.io/name: dashboard
     app.kubernetes.io/part-of: tekton-dashboard
-    app.kubernetes.io/version: v0.53.0
-    dashboard.tekton.dev/release: v0.53.0
-    version: v0.53.0
+    app.kubernetes.io/version: v0.32.0
+    dashboard.tekton.dev/release: v0.32.0
+    version: v0.32.0
   name: tekton-dashboard
   namespace: tekton-pipelines
 spec:
@@ -249,9 +248,9 @@ metadata:
     app.kubernetes.io/instance: default
     app.kubernetes.io/name: dashboard
     app.kubernetes.io/part-of: tekton-dashboard
-    app.kubernetes.io/version: v0.53.0
-    dashboard.tekton.dev/release: v0.53.0
-    version: v0.53.0
+    app.kubernetes.io/version: v0.32.0
+    dashboard.tekton.dev/release: v0.32.0
+    version: v0.32.0
   name: tekton-dashboard
   namespace: tekton-pipelines
 spec:
@@ -270,7 +269,7 @@ spec:
         app.kubernetes.io/instance: default
         app.kubernetes.io/name: dashboard
         app.kubernetes.io/part-of: tekton-dashboard
-        app.kubernetes.io/version: v0.53.0
+        app.kubernetes.io/version: v0.32.0
       name: tekton-dashboard
     spec:
       containers:
@@ -282,8 +281,7 @@ spec:
             - --read-only=false
             - --log-level=info
             - --log-format=json
-            - --default-namespace=
-            - --namespaces=
+            - --namespace=
             - --stream-logs=true
             - --external-logs=
           env:
@@ -291,7 +289,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: ghcr.io/tektoncd/dashboard/dashboard-9623576a202fe86c8b7d1bc489905f86:v0.53.0@sha256:471771d103fefa2b96eefdf4af9c4ff7494862aa621782c4ee22edad1b16c741
+          image: gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.32.0@sha256:f11d6bdd2a1f2bb1e6366e416741ce1754a7695837305c054a0167f3f7b055ca
           livenessProbe:
             httpGet:
               path: /health
