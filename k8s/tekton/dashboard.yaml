@@ -149,6 +149,9 @@ rules:
       - pipelineruns
       - customruns
     verbs:
+      - create
+      - update
+      - patch
       - get
       - list
       - watch
