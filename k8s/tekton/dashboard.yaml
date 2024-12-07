@@ -135,6 +135,7 @@ rules:
       - namespaces
       - pods
       - pods/log
+      - serviceaccounts
     verbs:
       - get
       - list
