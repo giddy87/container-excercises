@@ -1,4 +1,4 @@
-k8secret/*
+k8/secrets/
 docker-secret.yaml
 git-secrets.yaml
-
+service-account.yaml
