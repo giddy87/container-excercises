@@ -1,8 +1,8 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  generateName: ruby-app-build-push-
-  namespace: tekton-pipelines
+  name: clone-build-push-hds
+  namespace: tekton-runs
 spec:
   params:
   - name: repo-url

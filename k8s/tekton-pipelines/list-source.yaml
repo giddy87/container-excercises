@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Task
 metadata:
   name: list-source
-  namespace: tekton-pipelines
+  namespace: tekton-runs
 spec:
   workspaces:
     - name: source

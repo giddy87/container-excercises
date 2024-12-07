@@ -2,7 +2,7 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: clone-build-push
-  namespace: tekton-pipelines
+  namespace: tekton-runs
 spec:
   params:
   - name: repo-url

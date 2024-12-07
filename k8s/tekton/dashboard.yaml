@@ -136,8 +136,8 @@ rules:
       - pods
       - pods/log
       - serviceaccounts
-      - secrets
-      - persistentvolumeclaims
+      #- secrets
+      #- persistentvolumeclaims
     verbs:
       - get
       - list
@@ -312,7 +312,7 @@ spec:
               path: /readiness
               port: 9097
           securityContext:
-            allowPrivilegeEscalation: true
+            allowPrivilegeEscalation: false
             capabilities:
               drop:
                 - ALL
