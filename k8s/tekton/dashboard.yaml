@@ -136,6 +136,7 @@ rules:
       - pods
       - pods/log
       - serviceaccounts
+      - secrets
     verbs:
       - get
       - list
